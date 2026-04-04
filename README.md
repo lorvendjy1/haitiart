@@ -49,15 +49,49 @@ haitiart/
 
 ## 🚀 Instalación y Uso
 
-1. Clona el repositorio:
+### Opción 1: Clonar desde GitHub
+```bash
+git clone https://github.com/TU_USUARIO/haitiart.git
+cd haitiart
+```
+
+### Opción 2: Descargar ZIP
+1. Ve a https://github.com/TU_USUARIO/haitiart
+2. Click en "Code" > "Download ZIP"
+3. Extrae el archivo y abre en tu editor
+
+### Ejecutar localmente
+```bash
+# Usando Python (recomendado)
+python -m http.server 8000
+
+# O usando Node.js
+npx serve .
+
+# O simplemente abre haitiart.html en tu navegador
+```
+
+## 🌐 Conectar con GitHub
+
+### Para colaboradores:
+1. **Crear repositorio en GitHub**:
+   - Ve a https://github.com/new
+   - Nombre: `haitiart`
+   - Descripción: "Agencia inmobiliaria Haitiart - Venta de planos"
+   - Público o privado según prefieras
+
+2. **Conectar repositorio local**:
    ```bash
-   git clone <url-del-repositorio>
-   cd haitiart
+   # Reemplaza TU_USUARIO con tu nombre de usuario de GitHub
+   git remote add origin https://github.com/TU_USUARIO/haitiart.git
+   git push -u origin main
    ```
 
-2. Abre `haitiart.html` en tu navegador o usa un servidor local:
+3. **O usar el script automático**:
    ```bash
-   python -m http.server 8000
+   # Edita connect-github.sh con tu URL de GitHub
+   chmod +x connect-github.sh
+   ./connect-github.sh
    ```
 
 ## 📈 Optimizaciones Realizadas
@@ -76,9 +110,8 @@ haitiart/
 ## 📞 Contacto
 
 - **Email**: info@haitiart.com
-- **Teléfono**: +1-809-555-0123
-- **Dirección**: Santo Domingo, República Dominicana
-
+- **Teléfono**: +56946464499
+- **Dirección**: Santiago centro, chile
 ---
 
 *Haitiart - Tu hogar, nuestro compromiso.*
