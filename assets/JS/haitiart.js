@@ -1,27 +1,55 @@
-// HAITIART - JavaScript funcionalidad básica
+// HAITIART - JavaScript funcionalidad mejorada
+// Versión 1.2 - Modal con accesibilidad y UX mejorada
 
-// Modal Quién Somos
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal-quien-somos');
     const btnQuienSomos = document.getElementById('btn-quien-somos');
     const closeModal = document.querySelector('.close-modal');
 
+    // Función para abrir modal con accesibilidad mejorada
+    function openModal() {
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        btnQuienSomos.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+
+        // Focus en el botón de cerrar
+        setTimeout(() => closeModal.focus(), 100);
+    }
+
+    // Función para cerrar modal
+    function closeModalFunc() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        btnQuienSomos.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = 'auto';
+        btnQuienSomos.focus();
+    }
+
     if (btnQuienSomos && modal && closeModal) {
-        // Abrir modal
+        // Configurar accesibilidad
+        modal.setAttribute('aria-hidden', 'true');
+        modal.setAttribute('role', 'dialog');
+        btnQuienSomos.setAttribute('aria-expanded', 'false');
+
+        // Event listeners
         btnQuienSomos.addEventListener('click', function(e) {
             e.preventDefault();
-            modal.style.display = 'block';
+            openModal();
         });
 
-        // Cerrar modal con X
-        closeModal.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
+        closeModal.addEventListener('click', closeModalFunc);
 
-        // Cerrar modal haciendo click fuera
         window.addEventListener('click', function(e) {
             if (e.target === modal) {
-                modal.style.display = 'none';
+                closeModalFunc();
+            }
+        });
+
+        // Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModalFunc();
             }
         });
     }
@@ -44,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Lazy loading básico para imágenes (si se agregan en el futuro)
+    // Lazy loading básico para imágenes futuras
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -58,4 +86,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     images.forEach(img => imageObserver.observe(img));
+
+    // Animación de entrada para las tarjetas de planos
+    const planoCards = document.querySelectorAll('.plano-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    planoCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        cardObserver.observe(card);
+    });
 });
