@@ -17,7 +17,7 @@
                     <li><a href="#home">Inicio</a></li>
                     <li><a href="#" id="btn-quien-somos">Quién Somos</a></li>
                     <li><a href="#galeria-plano">Galería</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#" id="btn-contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -79,15 +79,24 @@
                 </div>
             </div>
         </section>
+        <section id="contacto" class="contacto hidden">
+            <h2>Contacto</h2>
+            <p><strong>Email:</strong> info@haitiart.cl</p>
+            <p><strong>Teléfono:</strong> +56946464499</p>
+            <p><strong>Dirección:</strong> Santiago Centro, Chile</p>
+        </section>
     </main>
     <footer>
         <p>&copy; 2026 Haitiart. Todos los derechos reservados.</p>
+        <p class="developer">Desarrollado por Lorvendjy Pierrilus Lormeus Blanc</p>
     </footer>
     <script>
-        // Modal Quién Somos
+        // Modal Quién Somos y sección de Contacto
         const modal = document.getElementById('modal-quien-somos');
         const btnQuienSomos = document.getElementById('btn-quien-somos');
         const closeModal = document.querySelector('.close-modal');
+        const btnContacto = document.getElementById('btn-contacto');
+        const contactoSection = document.getElementById('contacto');
 
         btnQuienSomos.addEventListener('click', (e) => {
             e.preventDefault();
@@ -102,6 +111,14 @@
             if (e.target === modal) {
                 modal.style.display = 'none';
             }
+        });
+
+        btnContacto.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (contactoSection.classList.contains('hidden')) {
+                contactoSection.classList.remove('hidden');
+            }
+            contactoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     </script>
     <script src="assets/JS/haitiart.js"></script>

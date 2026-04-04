@@ -137,6 +137,10 @@ section p {
     line-height: 1.8;
 }
 
+.contacto.hidden {
+    display: none;
+}
+
 /* ===== Galería y Planos ===== */
 #galeria-plano {
     display: flex;
