@@ -1,0 +1,67 @@
+{
+  "empresa": {
+    "nombre": "HAITIART",
+    "descripcion": "Agencia de venta de planos inmobiliarios especializada en propiedades de alta calidad",
+    "fundacion": 2026,
+    "especialidades": [
+      "Casas modernas",
+      "Edificios residenciales",
+      "Proyectos de lujo"
+    ]
+  },
+  "planos": [
+    {
+      "id": "casa-moderna",
+      "tipo": "Casa Moderna",
+      "descripcion": "Casa de 3 habitaciones con diseño contemporáneo",
+      "precio": 250000,
+      "caracteristicas": [
+        "3 habitaciones",
+        "2 baños",
+        "Cocina moderna",
+        "Jardín privado",
+        "Estacionamiento"
+      ],
+      "pagos": ["Visa", "Mastercard", "Efectivo", "Transferencia", "Crypto"]
+    },
+    {
+      "id": "edificio-10-pisos",
+      "tipo": "Edificio 10 Pisos",
+      "descripcion": "Edificio residencial con 40 unidades",
+      "precio": 1200000,
+      "caracteristicas": [
+        "40 unidades residenciales",
+        "Ascensor",
+        "Área común",
+        "Seguridad 24/7",
+        "Estacionamiento subterráneo"
+      ],
+      "pagos": ["Visa", "Mastercard", "Efectivo", "Transferencia", "Crypto"]
+    },
+    {
+      "id": "edificio-22-pisos-premium",
+      "tipo": "Edificio 22 Pisos Premium",
+      "descripcion": "Rascacielos de lujo con 88 unidades",
+      "precio": 5500000,
+      "caracteristicas": [
+        "88 unidades de lujo",
+        "Piscina infinity",
+        "Gimnasio",
+        "Vista panorámica",
+        "Servicio de concierge",
+        "Estacionamiento privado"
+      ],
+      "pagos": ["Visa", "Mastercard", "Efectivo", "Transferencia", "Crypto"]
+    }
+  ],
+  "contacto": {
+    "telefono": "+1-809-555-0123",
+    "email": "info@haitiart.com",
+    "direccion": "Santo Domingo, República Dominicana"
+  },
+  "metadatos": {
+    "version": "1.0",
+    "ultima_actualizacion": "2026-04-04",
+    "autor": "HAITIART Development Team"
+  }
+}

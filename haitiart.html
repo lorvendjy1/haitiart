@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haitiart</title>
+    <link rel="stylesheet" href="assets/agencyStyle/haitiart.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#home" class="logo-text">HAITIART</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#" id="btn-quien-somos">Quién Somos</a></li>
+                    <li><a href="#galeria-plano">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Modal Quién Somos -->
+    <div id="modal-quien-somos" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Quién Somos</h2>
+            <p>Bienvenido a HAITIART, tu agencia de confianza en la venta de planos inmobiliarios. Con más de una década de experiencia en el mercado, nos especializamos en ofrecer opciones de vivienda de alta calidad, desde casas modernas hasta edificios de lujo de hasta 22 pisos. Nuestro equipo de profesionales está comprometido en proporcionarte las mejores soluciones de financiamiento y facilidades de pago para que tu sueño de tener un hogar sea realidad. En HAITIART, tu satisfacción es nuestra prioridad.</p>
+        </div>
+    </div>
+
+    <main>
+        <section id="galeria-plano">
+            <h2>Nuestros Planos Disponibles</h2>
+            <div class="planos-grid">
+                <div class="plano-card">
+                    <div class="plano-tipo">Casa Moderna</div>
+                    <div class="plano-info">
+                        <p><strong>Descripción:</strong> Casa de 3 habitaciones con diseño contemporáneo</p>
+                        <p><strong>Precio:</strong> $250,000</p>
+                    </div>
+                    <div class="pagos">
+                        <span class="pago-option">Visa</span>
+                        <span class="pago-option">Mastercard</span>
+                        <span class="pago-option">Efectivo</span>
+                        <span class="pago-option">Transferencia</span>
+                        <span class="pago-option">Crypto</span>
+                    </div>
+                </div>
+                <div class="plano-card">
+                    <div class="plano-tipo">Edificio 10 Pisos</div>
+                    <div class="plano-info">
+                        <p><strong>Descripción:</strong> Edificio residencial con 40 unidades</p>
+                        <p><strong>Precio:</strong> $1,200,000</p>
+                    </div>
+                    <div class="pagos">
+                        <span class="pago-option">Visa</span>
+                        <span class="pago-option">Mastercard</span>
+                        <span class="pago-option">Efectivo</span>
+                        <span class="pago-option">Transferencia</span>
+                        <span class="pago-option">Crypto</span>
+                    </div>
+                </div>
+                <div class="plano-card">
+                    <div class="plano-tipo">Edificio 22 Pisos Premium</div>
+                    <div class="plano-info">
+                        <p><strong>Descripción:</strong> Rascacielos de lujo con 88 unidades</p>
+                        <p><strong>Precio:</strong> $5,500,000</p>
+                    </div>
+                    <div class="pagos">
+                        <span class="pago-option">Visa</span>
+                        <span class="pago-option">Mastercard</span>
+                        <span class="pago-option">Efectivo</span>
+                        <span class="pago-option">Transferencia</span>
+                        <span class="pago-option">Crypto</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Haitiart. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        // Modal Quién Somos
+        const modal = document.getElementById('modal-quien-somos');
+        const btnQuienSomos = document.getElementById('btn-quien-somos');
+        const closeModal = document.querySelector('.close-modal');
+
+        btnQuienSomos.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'block';
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="assets/JS/haitiart.js"></script>
+</body>
+</html>
