@@ -40,11 +40,11 @@ haitiart/
 
 ## Opciones de pago
 
-- 💳 Visa
-- 💳 Mastercard
-- 💵 Efectivo
-- 🏦 Transferencia Bancaria
-- ₿ Cryptomonedas
+- Visa
+- Mastercard
+- Efectivo
+- Transferencia Bancaria
+- Cryptomonedas
 
 
 ## Equipo

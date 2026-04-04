@@ -72,21 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Lazy loading básico para imágenes futuras
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-
     // Animación de entrada para las tarjetas de planos
     const planoCards = document.querySelectorAll('.plano-card');
     const cardObserver = new IntersectionObserver((entries) => {
