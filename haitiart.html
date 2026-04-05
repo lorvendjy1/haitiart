@@ -18,11 +18,11 @@
                     <li><a href="#" id="btn-quien-somos">Quién Somos</a></li>
                     <li><a href="#galeria-plano">Galería</a></li>
                     <li><a href="#" id="btn-contacto">Contacto</a></li>
+                    <li><a href="#" id="btn-registro">Registro</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
-    <!-- Modal Quién Somos -->
+    </header>    
     <div id="modal-quien-somos" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -39,10 +39,17 @@
                     <div class="plano-tipo">Casa Moderna</div>
                     <div class="plano-info">
                         <p><strong>Descripción:</strong> Casa de 3 habitaciones con diseño contemporáneo</p>
-                        <p><strong>Precio:</strong> $250,000</p>
+                        <p><strong>Precio:</strong> $290,990</p>
                     </div>
                     <div class="pagos">
-                        <span class="pago-option">Visa</span>
+                        <button class="comprar-btn">Comprar</button>
+                        <div class="pago-options hidden">
+                            <span class="pago-option">Visa</span>
+                            <span class="pago-option">Mastercard</span>
+                            <span class="pago-option">Efectivo</span>
+                            <span class="pago-option">Transferencia</span>
+                            <span class="pago-option">Crypto</span>
+                        </div>                        <span class="pago-option">Visa</span>
                         <span class="pago-option">Mastercard</span>
                         <span class="pago-option">Efectivo</span>
                         <span class="pago-option">Transferencia</span>
@@ -53,7 +60,7 @@
                     <div class="plano-tipo">Edificio 10 Pisos</div>
                     <div class="plano-info">
                         <p><strong>Descripción:</strong> Edificio residencial con 40 unidades</p>
-                        <p><strong>Precio:</strong> $1,200,000</p>
+                        <p><strong>Precio:</strong> $1,299,990</p>
                     </div>
                     <div class="pagos">
                         <span class="pago-option">Visa</span>
@@ -67,7 +74,7 @@
                     <div class="plano-tipo">Edificio 22 Pisos Premium</div>
                     <div class="plano-info">
                         <p><strong>Descripción:</strong> Rascacielos de lujo con 88 unidades</p>
-                        <p><strong>Precio:</strong> $5,500,000</p>
+                        <p><strong>Precio:</strong> $5,590,990</p>
                     </div>
                     <div class="pagos">
                         <span class="pago-option">Visa</span>
@@ -78,6 +85,31 @@
                     </div>
                 </div>
             </div>
+        </section>
+        <section id="registro" class="registro hidden">
+            <h2>Registro de Interés</h2>
+            <form id="registro-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                
+                <label for="plano">Plano de Interés:</label>
+                <select id="plano" name="plano">
+                    <option value="casa-moderna">Casa Moderna</option>
+                    <option value="edificio-10-pisos">Edificio 10 Pisos</option>
+                    <option value="edificio-22-pisos">Edificio 22 Pisos Premium</option>
+                </select>
+                
+                <label for="mensaje">Mensaje (opcional):</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+                
+                <button type="submit">Enviar Registro</button>
+            </form>
         </section>
         <section id="contacto" class="contacto hidden">
             <h2>Contacto</h2>
@@ -120,6 +152,225 @@
             }
             contactoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
+
+        // Nuevo script para Registro
+        const btnRegistro = document.getElementById('btn-registro');
+        const registroSection = document.getElementById('registro');
+        const registroForm = document.getElementById('registro-form');
+
+        btnRegistro.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (registroSection.classList.contains('hidden')) {
+                registroSection.classList.remove('hidden');
+            }
+            registroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haitiart</title>
+    <link rel="stylesheet" href="assets/agencyStyle/haitiart.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#home" class="logo-text">HAITIART</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#" id="btn-quien-somos">Quién Somos</a></li>
+                    <li><a href="#galeria-plano">Galería</a></li>
+                    <li><a href="#" id="btn-contacto">Contacto</a></li>
+                    <li><a href="#" id="btn-registro">Registro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
+    <div id="modal-quien-somos" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Quién Somos</h2>
+            <p>Bienvenido a HAITIART, tu agencia de confianza en la venta de planos inmobiliarios. Con más de una década de experiencia en el mercado, nos especializamos en ofrecer opciones de vivienda de alta calidad, desde casas modernas hasta edificios de lujo de hasta 22 pisos. Nuestro equipo de profesionales está comprometido en proporcionarte las mejores soluciones de financiamiento y facilidades de pago para que tu sueño de tener un hogar sea realidad. En HAITIART, tu satisfacción es nuestra prioridad.</p>
+        </div>
+    </div>
+
+    <main>
+        <section id="galeria-plano">
+            <h2>Nuestros Planos Disponibles</h2>
+            <div class="planos-grid">
+                <div class="plano-card">
+                    <div class="plano-tipo">Casa Moderna</div>
+                    <div class="plano-info">
+                        <p><strong>Descripción:</strong> Casa de 3 habitaciones con diseño contemporáneo</p>
+                        <p><strong>Precio:</strong> $290,990</p>
+                    </div>
+                    <div class="pagos">
+                        <button class="comprar-btn">Comprar</button>
+                        <select class="pago-select hidden">
+                            <option value="">Selecciona método de pago</option>
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="transferencia">Transferencia</option>
+                            <option value="crypto">Crypto</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="plano-card">
+                    <div class="plano-tipo">Edificio 10 Pisos</div>
+                    <div class="plano-info">
+                        <p><strong>Descripción:</strong> Edificio residencial con 40 unidades</p>
+                        <p><strong>Precio:</strong> $1,299,990</p>
+                    </div>
+                    <div class="pagos">
+                        <button class="comprar-btn">Comprar</button>
+                        <select class="pago-select hidden">
+                            <option value="">Selecciona método de pago</option>
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="transferencia">Transferencia</option>
+                            <option value="crypto">Crypto</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="plano-card">
+                    <div class="plano-tipo">Edificio 22 Pisos Premium</div>
+                    <div class="plano-info">
+                        <p><strong>Descripción:</strong> Rascacielos de lujo con 88 unidades</p>
+                        <p><strong>Precio:</strong> $5,590,990</p>
+                    </div>
+                    <div class="pagos">
+                        <button class="comprar-btn">Comprar</button>
+                        <select class="pago-select hidden">
+                            <option value="">Selecciona método de pago</option>
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="transferencia">Transferencia</option>
+                            <option value="crypto">Crypto</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="registro" class="registro hidden">
+            <h2>Registro de Interés</h2>
+            <form id="registro-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                
+                <label for="plano">Plano de Interés:</label>
+                <select id="plano" name="plano">
+                    <option value="casa-moderna">Casa Moderna</option>
+                    <option value="edificio-10-pisos">Edificio 10 Pisos</option>
+                    <option value="edificio-22-pisos">Edificio 22 Pisos Premium</option>
+                </select>
+                
+                <label for="mensaje">Mensaje (opcional):</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+                
+                <button type="submit">Enviar Registro</button>
+            </form>
+        </section>
+        <section id="contacto" class="contacto hidden">
+            <h2>Contacto</h2>
+            <p><strong>Email:</strong> info@haitiart.cl</p>
+            <p><strong>Teléfono:</strong> +56946464499</p>
+            <p><strong>Dirección:</strong> Santiago Centro, Chile</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Haitiart. Todos los derechos reservados.</p>
+        <p class="developer">Desarrollado por Lorvendjy Pierrilus Lormeus Blanc</p>
+    </footer>
+    <script>
+        // Modal Quién Somos y sección de Contacto
+        const modal = document.getElementById('modal-quien-somos');
+        const btnQuienSomos = document.getElementById('btn-quien-somos');
+        const closeModal = document.querySelector('.close-modal');
+        const btnContacto = document.getElementById('btn-contacto');
+        const contactoSection = document.getElementById('contacto');
+
+        btnQuienSomos.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'block';
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        btnContacto.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (contactoSection.classList.contains('hidden')) {
+                contactoSection.classList.remove('hidden');
+            }
+            contactoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Nuevo script para Registro
+        const btnRegistro = document.getElementById('btn-registro');
+        const registroSection = document.getElementById('registro');
+        const registroForm = document.getElementById('registro-form');
+
+        btnRegistro.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (registroSection.classList.contains('hidden')) {
+                registroSection.classList.remove('hidden');
+            }
+            registroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        registroForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Registro enviado exitosamente. Nos pondremos en contacto pronto.');
+            registroForm.reset();
+        });
+
+        // Script para mostrar opciones de pago
+        const comprarBtns = document.querySelectorAll('.comprar-btn');
+        comprarBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const select = btn.nextElementSibling;
+                if (select.classList.contains('hidden')) {
+                    select.classList.remove('hidden');
+                } else {
+                    select.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/JS/haitiart.js"></script>
+</body>
+</html>
+
+        registroForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Registro enviado exitosamente. Nos pondremos en contacto pronto.');
+            registroForm.reset();
+        });
+    </script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
     <script src="assets/JS/haitiart.js"></script>
 </body>

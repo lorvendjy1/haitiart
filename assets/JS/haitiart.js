@@ -1,23 +1,17 @@
-// HAITIART - JavaScript funcionalidad mejorada
-// Versión 1.2 - Modal con accesibilidad y UX mejorada
 
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal-quien-somos');
     const btnQuienSomos = document.getElementById('btn-quien-somos');
     const closeModal = document.querySelector('.close-modal');
 
-    // Función para abrir modal con accesibilidad mejorada
     function openModal() {
         modal.style.display = 'block';
         modal.setAttribute('aria-hidden', 'false');
         btnQuienSomos.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
-
-        // Focus en el botón de cerrar
         setTimeout(() => closeModal.focus(), 100);
     }
 
-    // Función para cerrar modal
     function closeModalFunc() {
         modal.style.display = 'none';
         modal.setAttribute('aria-hidden', 'true');
@@ -27,12 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (btnQuienSomos && modal && closeModal) {
-        // Configurar accesibilidad
         modal.setAttribute('aria-hidden', 'true');
         modal.setAttribute('role', 'dialog');
         btnQuienSomos.setAttribute('aria-expanded', 'false');
-
-        // Event listeners
         btnQuienSomos.addEventListener('click', function(e) {
             e.preventDefault();
             openModal();
@@ -46,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Escape key
+
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && modal.style.display === 'block') {
                 closeModalFunc();
@@ -54,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scroll para navegación
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -72,7 +62,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animación de entrada para las tarjetas de planos
+    const btnContacto = document.getElementById('btn-contacto');
+    const contactoSection = document.getElementById('contacto');
+    if (btnContacto && contactoSection) {
+        btnContacto.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactoSection.classList.remove('hidden');
+            contactoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    }
+
+    const planesData = [
+        {
+            tipo: 'Casa Moderna',
+            descripcion: 'Casa de 3 habitaciones con diseño contemporáneo',
+            precio: 290990,
+            pagos: ['Visa', 'Mastercard', 'Efectivo', 'Transferencia', 'Crypto']
+        },
+        {
+            tipo: 'Edificio 10 Pisos',
+            descripcion: 'Edificio residencial con 40 unidades',
+            precio: 1299990,
+            pagos: ['Visa', 'Mastercard', 'Efectivo', 'Transferencia', 'Crypto']
+        },
+        {
+            tipo: 'Edificio 22 Pisos Premium',
+            descripcion: 'Rascacielos de lujo con 88 unidades',
+            precio: 5590990,
+            pagos: ['Visa', 'Mastercard', 'Efectivo', 'Transferencia', 'Crypto']
+        }
+    ];
+
+    const planosGrid = document.getElementById('planos-grid');
+    const formatPrecio = (value) => '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+    const renderPlanes = () => {
+        if (!planosGrid) return;
+        planosGrid.innerHTML = planesData.map(plan => `
+            <div class="plano-card">
+                <div class="plano-tipo">${plan.tipo}</div>
+                <div class="plano-info">
+                    <p><strong>Descripción:</strong> ${plan.descripcion}</p>
+                    <p><strong>Precio:</strong> ${formatPrecio(plan.precio)}</p>
+                </div>
+                <div class="pagos">
+                    <button class="comprar-btn">Comprar</button>
+                    <div class="pago-options hidden">
+                        ${plan.pagos.map(pago => `<span class="pago-option">${pago}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    };
+
+    renderPlanes();
+
     const planoCards = document.querySelectorAll('.plano-card');
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -89,4 +133,51 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         cardObserver.observe(card);
     });
+
+    const comprarBtns = document.querySelectorAll('.comprar-btn');
+    comprarBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const pagoOptions = this.nextElementSibling;
+            pagoOptions.classList.toggle('hidden');
+        });
+    });
+
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+
+
+    const tipoRadios = document.querySelectorAll('input[name="tipo"]');
+    const empresaGroup = document.getElementById('empresa-group');
+    const clienteForm = document.getElementById('cliente-form');
+
+    tipoRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'empresa') {
+                empresaGroup.style.display = 'block';
+            } else {
+                empresaGroup.style.display = 'none';
+            }
+        });
+    });
+
+    if (clienteForm) {
+        clienteForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            if (!data.nombre || !data.edad || !data.sexo || !data.ubicacion || !data.tipo) {
+                alert('Por favor, completa todos los campos obligatorios.');
+                return;
+            }
+
+            alert('¡Gracias ' + data.nombre + '! Tu registro ha sido enviado exitosamente.\n\nTipo: ' + (data.tipo === 'natural' ? 'Persona Natural' : 'Representante de Empresa') + '\nEdad: ' + data.edad + '\nSexo: ' + data.sexo + '\nUbicacion: ' + data.ubicacion + (data.empresa ? '\nEmpresa: ' + data.empresa : '') + (data.resena ? '\nResena: ' + data.resena : ''));
+
+            this.reset();
+            empresaGroup.style.display = 'none';
+        });
+    }
 });

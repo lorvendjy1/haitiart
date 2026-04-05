@@ -34,9 +34,9 @@ haitiart/
 
 ## Planos disponibles
 
-1. **Casa Moderna** - $250,000
-2. **Edificio 10 Pisos** - $1,200,000
-3. **Edificio 22 Pisos Premium** - $5,500,000
+1. **Casa Moderna** - $290,990
+2. **Edificio 10 Pisos** - $1,299,990
+3. **Edificio 22 Pisos Premium** - $5,590,990
 
 ## Opciones de pago
 

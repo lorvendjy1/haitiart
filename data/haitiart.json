@@ -14,7 +14,7 @@
       "id": "casa-moderna",
       "tipo": "Casa Moderna",
       "descripcion": "Casa de 3 habitaciones con diseño contemporáneo",
-      "precio": 250000,
+      "precio": 290990,
       "caracteristicas": [
         "3 habitaciones",
         "2 baños",
@@ -28,7 +28,7 @@
       "id": "edificio-10-pisos",
       "tipo": "Edificio 10 Pisos",
       "descripcion": "Edificio residencial con 40 unidades",
-      "precio": 1200000,
+      "precio": 1299990,
       "caracteristicas": [
         "40 unidades residenciales",
         "Ascensor",
@@ -42,7 +42,7 @@
       "id": "edificio-22-pisos-premium",
       "tipo": "Edificio 22 Pisos Premium",
       "descripcion": "Rascacielos de lujo con 88 unidades",
-      "precio": 5500000,
+      "precio": 5590990,
       "caracteristicas": [
         "88 unidades de lujo",
         "Piscina infinity",
